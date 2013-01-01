@@ -1,0 +1,26 @@
+{
+  "name": "ganam",
+  "version": "0.0.1",
+  "description": "Ganam style is a style guide parser",
+  "author": "Hsiaoming Yang <lepture@me.com>",
+  "keywords": [
+    "style", "nico", "css", "parser"
+  ],
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lepture/ganam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lepture/ganam/issues"
+  },
+  "devDependencies": {
+    "jshint": "*",
+    "mocha": "*",
+    "expect.js": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  }
+}
