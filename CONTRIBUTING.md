@@ -2,7 +2,7 @@
 
 There are more than one way to contribute, and I will appreciate any way you choose.
 
-- tell your friends about ganam, let nico to be known
+- tell your friends about ganam, let ganam to be known
 - discuss ganam, and submit bugs with github issues
 - send patch with github pull request
 
