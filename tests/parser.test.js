@@ -35,11 +35,11 @@ var blockComments = [
 
 describe('parse', function() {
   it('should have one section', function() {
-    expect(parser.parse(blockComments)).to.have.length(1);
+    expect(parser(blockComments)).to.have.length(1);
   });
 
   it('should be a valid section', function() {
-    var section = parser.parse(lineComments)[0];
+    var section = parser(lineComments)[0];
     expect(section.name).to.equal('1.1');
     expect(section.title).to.equal('Classy Buttons');
     expect(section.description).to.contain('widely');
