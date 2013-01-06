@@ -18,10 +18,9 @@ lint:
 
 out = _site/coverage.html
 coverage:
-	@scripts/detect-jscoverage.sh
 	@rm -fr lib-cov
 	@jscoverage lib lib-cov
-	@NICO_COVERAGE=1 $(MAKE) test reporter=html-cov > ${out}
+	@COVERAGE=1 $(MAKE) test reporter=html-cov > ${out}
 	@echo
 	@rm -fr lib-cov
 	@echo "Built Report to ${out}"
@@ -37,7 +36,6 @@ publish: clean documentation coverage
 	@ghp-import _site -p
 
 clean:
-	@rm -fr tests/_site
 	@rm -fr _site
 
 .PHONY: all build test lint coverage

@@ -1,4 +1,5 @@
 var expect = require('expect.js');
+var require = require('./_require');
 var parser = require('../lib/parser');
 
 var lineComments = [
