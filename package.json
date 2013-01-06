@@ -7,6 +7,7 @@
     "style", "nico", "css", "parser"
   ],
   "dependencies": {
+    "stylus": "*"
   },
   "repository": {
     "type": "git",
