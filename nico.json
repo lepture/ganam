@@ -1,10 +1,9 @@
 {
   "source": "docs",
   "output": "_site",
-  "theme": "one",
   "permalink": "{{directory}}/{{filename}}",
-  "sitename": "Style Guide",
-  "perpage": 1000,
+  "sitename": "Ganam Style",
+  "google": "UA-21475122-5",
   "ganam": {
     "source": "./docs/guide",
     "output": "guide",
@@ -13,6 +12,7 @@
     }
   },
   "writers": [
+    "nico.PageWriter",
     "nico.FileWriter",
     "nico.StaticWriter",
     "nico.GanamWriter"

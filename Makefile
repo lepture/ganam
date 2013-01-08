@@ -26,11 +26,14 @@ coverage:
 	@echo "Built Report to ${out}"
 	@echo
 
+theme = $(HOME)/.spm/themes/one
 documentation:
-	@nico build -C nico.json -q
+	@cp README.md docs/index.md
+	@nico build -C nico.json -q --theme=${theme}
 
 server:
-	@nico server -C nico.json -v --watch
+	@cp README.md docs/index.md
+	@nico server -C nico.json -v --watch --theme=${theme}
 
 publish: clean documentation coverage
 	@ghp-import _site -p

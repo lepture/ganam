@@ -59,6 +59,29 @@ var ganam = require('ganam');
 var sections = ganam(code);
 ```
 
+**Sections** is a list of section, a section contains:
+
+```javascript
+{
+    "name": "1.1",
+    "title": "Classy Buttons"
+    "description": "Classy buttons is clickable form action buttons,\nit is widely usage in forms.",
+    "modifiers": [
+        {"name": ":hover", "description": "button when hovered"},
+        {"name": ":disabled", "description": "button when disabled"},
+        {"name": ".disabled", "description": "the same as :disabled"}
+    ],
+    "html": "<button class='classy {{modifier}}'>Button</button\n<a class='button-classy {{modifier}}'>Button</a>",
+    "examples": [
+        {"name": "", "code": "<button class='classy '>Button</button>......"},
+        {"name": ":hover", "code": "<button class='classy pseudo-class-hover'>Button</button>......"},
+        {"name": ":disabled", "code": "<button class='classy pseudo-class-disabled'>Button</button>......"},
+        ...
+    ]
+}
+```
+
+
 ### style
 
 Ganam style a directory:
@@ -69,6 +92,17 @@ ganam.style('./foo.styl', function(styleguide) {
 });
 ```
 
+A **styleguide** is something like:
+
+```javascript
+{
+    "order": 1,
+    "filepath": "./foo.styl",
+    "css": "button.classy {.....}",
+    "sections": [....]
+}
+```
+
 ### styleSync
 
 Ganam style a directory synchronously:
@@ -77,3 +111,17 @@ Ganam style a directory synchronously:
 var ganam = require('ganam');
 var styleguide = ganam.styleSync('./bar.styl');
 ```
+
+## Nico
+
+We have a live example for you: [styleguide](http://lab.lepture.com/ganam/guide/buttons).
+The code is of this styleguide is located at: [ganam/docs/guide](https://github.com/lepture/ganam/blob/master/docs/guide).
+This styleguide is built with [nico](http://lab.lepture.com/nico/).
+
+Find more information about nico and get nico with:
+
+```
+$ npm install nico -g
+```
+
+Have a look at the config file [nico.json](https://github.com/lepture/ganam/blob/master/nico.json) of this project, and learn how to use it. BTW, you must have `ganam` installed to active `GanamWriter`.
