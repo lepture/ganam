@@ -1,0 +1,66 @@
+@import 'nib'
+@import '_include/defines'
+
+render_button()
+  display: inline-block
+  padding: 8px 15px
+  font: bold 12px/1 $sans-family
+  color: $dark-text-color
+  text-shadow: 0 1px 0 white
+  background: #e5e5e5 linear-gradient(top, #f7f7f7, #e5e5e5)
+  border-radius: 3px
+  border-width: 1px
+  border-style: solid
+  border-color: #ddd #ddd #bbb
+  cursor: pointer
+  outline: 0
+  text-decoration: none;
+
+
+// 1.1 Classy Buttons
+//
+// Classy buttons are big clickable buttons,
+// great for form actions and primary page actions.
+// This is used extensively around the site.
+//
+// :hover - Buttons when hover
+// :disabled - Buttons when disabled
+// .disabled - The same as :disabled
+//
+// Examples:
+//
+//    <button class="classy {{modifier}}">Button (button.classy)</button>
+//    <a href="#" class="button-classy {{modifier}}">Button (a.button-classy)</a>
+
+button.classy, a.button-classy
+  render_button()
+
+  &:hover
+    color: #d64
+
+  &:disabled, &.disabled
+    color: #999
+
+
+
+// 1.2 Primary Buttons
+//
+// Primary buttons are designed for the main form action,
+// use whenever creating something.
+//
+// :hover - Buttons when hover
+//
+// Examples:
+//
+//     <button class="primary {{modifier}}">Button (button.primary)</button>
+//     <a href="#" class="button-primary {{modifier}}">Button (a.button-primary)</a>
+
+button.primary, a.button-primary
+  render_button()
+  color: white
+  border-color: #74BB5A #74BB5A #509338
+  background: #60B044 linear-gradient(top, #8ADD6D, #60B044)
+  text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px
+
+  &:hover
+    border-color: #4A993E

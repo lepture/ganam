@@ -1,0 +1,20 @@
+{
+  "source": "docs",
+  "output": "_site",
+  "theme": "one",
+  "permalink": "{{directory}}/{{filename}}",
+  "sitename": "Style Guide",
+  "perpage": 1000,
+  "ganam": {
+    "source": "./docs/guide",
+    "output": "guide",
+    "options": {
+      "paths": ["docs/guide", "node_modules/nib/lib"]
+    }
+  },
+  "writers": [
+    "nico.FileWriter",
+    "nico.StaticWriter",
+    "nico.GanamWriter"
+  ]
+}
