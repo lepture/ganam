@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Style Guide</title>
+    <style type="text/css">
+      .container {
+        font: 13px/1.4 Helvetica, arial, sans-serif;
+        color: #333;
+        width: 920px;
+        margin: 0 auto;
+        padding: 48px 0;
+        zoom: 1;
+      }
+      .container:after {
+        display: block;
+        clear: both;
+        content: ' ';
+      }
+      .menu-container {
+        float: left;
+        width: 200px;
+        padding: 3px;
+        background: #efefef;
+        border-radius: 2px;
+      }
+      .menu {
+        margin: 0;
+        padding: 0;
+        background: #fafafb;
+        border-radius: 2px;
+        border: 1px solid #d8d8d8;
+        list-style: none;
+      }
+      .menu li {
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid white;
+        border-bottom: 1px solid #eee;
+      }
+      .menu li:first-child {
+        border-top: none;
+      }
+      .menu a {
+        display: block;
+        text-decoration: none;
+        color: #4183c4;
+        padding: 8px 10px 8px 8px;
+        text-shadow: 0 1px 0 white;
+        border-left: 2px solid #fafafb;
+      }
+      .menu .active a {
+        background: white;
+        border-left: 2px solid #d26911;
+        font-weight: bold;
+        color: #222;
+        cursor: default;
+        box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+      }
+      .styleguide {
+        float: right;
+        width: 700px;
+      }
+      .section {
+        border: 1px solid #ddd;
+        border-top-color: #333;
+        margin-bottom: 30px;
+      }
+      .section-title {
+        margin: 0;
+        padding: 4px 10px;
+        color: white;
+        font-size: 12px;
+        text-transform: uppercase;
+        background: #333;
+      }
+      .section-body {
+        padding: 1px 10px;
+        background: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+      }
+      .example {
+        position: relative;
+        padding: 20px;
+        border-top: 1px solid #eee;
+      }
+      .example-name {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #999;
+        background: #f9f9f9;
+        font-size: 11px;
+        padding: 5px 15px;
+        border-left: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+      .section-html {
+        padding: 15px;
+        background: #edf6f8;
+        border-top: 1px solid #dde7ea;
+        overflow: auto;
+      }
+      .highlight pre {
+        color: #666;
+        font-family: Consolas, "Liberation Mono", Courier, monospace;
+      }
+      .highlight .tag {
+        color: #268bd2;
+      }
+      .highlight .attribute {
+        color: #b58900;
+      }
+      .highlight .value {
+        color: #2aa198;
+      }
+      /*
+ * 2.1 Typical Form
+ *
+ * With a containning label and containning the form element.
+ *
+ * .required - This group is required to submit the form.
+ *
+ *     <dl class="form-typical {{modifier}}">
+ *         <dt><label>Example Text</label></dt>
+ *         <dd><input type="text" class="textfield" value="Example Value" /></dd>
+ *     </dl>
+ */
+
+.form-typical {
+  margin: 15px 0;
+}
+.form-typical dt {
+  margin-bottom: 6px;
+}
+.form-typical dt label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+.form-typical dd {
+  margin: 0;
+  padding: 0;
+}
+.form-typical .textfield {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  background: #fafafa;
+  box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 1px;
+  margin-right: 5px;
+  width: 400px;
+  padding: 6px;
+  font-size: 14px;
+  color: #666;
+}
+.form-typical.required label:after {
+  margin-left: 4px;
+  display: inline;
+  content: '*';
+  color: red;
+}
+/*
+ * 2.1 Typical Form
+ *
+ * With a containning label and containning the form element.
+ *
+ * .required - This group is required to submit the form.
+ *
+ *     <dl class="form-typical {{modifier}}">
+ *         <dt><label>Example Text</label></dt>
+ *         <dd><input type="text" class="textfield" value="Example Value" /></dd>
+ *     </dl>
+ */
+
+.form-typical {
+  margin: 15px 0;
+}
+.form-typical dt {
+  margin-bottom: 6px;
+}
+.form-typical dt label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+.form-typical dd {
+  margin: 0;
+  padding: 0;
+}
+.form-typical .textfield {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  background: #fafafa;
+  box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 1px;
+  margin-right: 5px;
+  width: 400px;
+  padding: 6px;
+  font-size: 14px;
+  color: #666;
+}
+.form-typical.required label:after {
+  margin-left: 4px;
+  display: inline;
+  content: '*';
+  color: red;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu-container">
+        <ol class="menu">
+          <li><a href="../guide/buttons">Buttons</a></li>
+          <li class="active"><a href="../guide/forms">Forms</a></li>
+        </ol>
+      </div>
+      <div class="styleguide">
+        <div class="section">
+          <h3 class="section-title">
+            <span class="section-name">2.1</span>
+            <span class="section-title">Typical Form</span>
+          </h3>
+          <div class="section-body">
+            <p>With a containning label and containning the form element.</p>
+
+            <ul class="modifier">
+              <li><strong>.required</strong> - This group is required to submit the form.</li>
+            </ul>
+          </div>
+          <div class="example">
+ <dl class="form-typical ">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" class="textfield" value="Example Value" /></dd>
+</dl>
+
+          </div>
+          <div class="example">
+            <span class="example-name">.required</span>
+ <dl class="form-typical required">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" class="textfield" value="Example Value" /></dd>
+</dl>
+
+          </div>
+          <div class="section-html">
+            <div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">dl</span> <span class="attribute">class</span>=<span class="value">"form-typical {{modifier}}"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">dt</span>&gt;</span><span class="tag">&lt;<span class="title">label</span>&gt;</span>Example Text<span class="tag">&lt;/<span class="title">label</span>&gt;</span><span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">class</span>=<span class="value">"textfield"</span> <span class="attribute">value</span>=<span class="value">"Example Value"</span> /&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
+</code></pre></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

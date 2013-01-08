@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.2.0">
+    <meta name="theme" content="one 0.1">
+    <title>Ganam Style</title>
+    <link rel="stylesheet" href="./static/one.css" />
+    <link rel="stylesheet" href="./static/syntax.css" />
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21475122-5']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="navigation" role="navigation">
+      <div class="container">
+        <a class="home" href="./">Ganam Style</a>
+      </div>
+    </div>
+    <div class="document">
+<div class="hentry">
+  <h1 class="entry-title">Ganam Style</h1>
+  <div class="entry-content"><p><a href="https://travis-ci.org/lepture/ganam"><img src="https://secure.travis-ci.org/lepture/ganam.png?branch=master" alt="building status"/></a></p>
+
+<p>Ganam style is a style guide render, inspired by <a href="https://github.com/kneath/kss">kneath/kss</a>.
+It is written in nodejs, helps web developers to write a style guide.</p>
+<h2 id="installation">Installation</h2>
+<p>It&#39;s easy to install ganam with npm:</p>
+
+<pre>$ npm install ganam
+</pre>
+<h2 id="syntax">Syntax</h2>
+<p>Writing a style (stylus, css) that ganam can parse. A basic overview:</p>
+<div class="highlight"><pre><code class="css"><span class="comment">/*
+1.1 Classy Buttons
+
+Classy buttons is clickable form action buttons,
+it is widely usage in forms.
+
+:hover - button when hovered
+:disabled - button when disabled
+.disabled - the same as :disabled
+
+Examples:
+
+    &lt;button class="classy {{modifier}}"&gt;Button&lt;/button
+    &lt;a class="button-classy {{modifier}}"&gt;Button&lt;/a&gt;
+*/</span>
+
+<span class="tag">button</span><span class="class">.classy</span>,
+<span class="tag">a</span><span class="class">.button-classy</span> <span class="rules">{
+  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#d64</span>;</span></span>
+<span class="rule">}</span></span>
+<span class="tag">button</span><span class="class">.classy</span><span class="pseudo">:hover</span> <span class="rules">{
+  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#000</span>;</span></span>
+<span class="rule">}</span></span>
+</code></pre></div><h2 id="library">Library</h2><h3 id="ganam">ganam</h3>
+<p>Parse code and get the sections:</p>
+<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
+<span class="keyword">var</span> sections = ganam(code);
+</code></pre></div>
+<p><strong>Sections</strong> is a list of section, a section contains:</p>
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"name"</span>: <span class="string">"1.1"</span>,
+    <span class="string">"title"</span>: <span class="string">"Classy Buttons"</span>
+    <span class="string">"description"</span>: <span class="string">"Classy buttons is clickable form action buttons,\nit is widely usage in forms."</span>,
+    <span class="string">"modifiers"</span>: [
+        {<span class="string">"name"</span>: <span class="string">":hover"</span>, <span class="string">"description"</span>: <span class="string">"button when hovered"</span>},
+        {<span class="string">"name"</span>: <span class="string">":disabled"</span>, <span class="string">"description"</span>: <span class="string">"button when disabled"</span>},
+        {<span class="string">"name"</span>: <span class="string">".disabled"</span>, <span class="string">"description"</span>: <span class="string">"the same as :disabled"</span>}
+    ],
+    <span class="string">"html"</span>: <span class="string">"&lt;button class='classy {{modifier}}'&gt;Button&lt;/button\n&lt;a class='button-classy {{modifier}}'&gt;Button&lt;/a&gt;"</span>,
+    <span class="string">"examples"</span>: [
+        {<span class="string">"name"</span>: <span class="string">""</span>, <span class="string">"code"</span>: <span class="string">"&lt;button class='classy '&gt;Button&lt;/button&gt;......"</span>},
+        {<span class="string">"name"</span>: <span class="string">":hover"</span>, <span class="string">"code"</span>: <span class="string">"&lt;button class='classy pseudo-class-hover'&gt;Button&lt;/button&gt;......"</span>},
+        {<span class="string">"name"</span>: <span class="string">":disabled"</span>, <span class="string">"code"</span>: <span class="string">"&lt;button class='classy pseudo-class-disabled'&gt;Button&lt;/button&gt;......"</span>},
+        ...
+    ]
+}
+</code></pre></div><h3 id="style">style</h3>
+<p>Ganam style a directory:</p>
+<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
+ganam.style(<span class="string">'./foo.styl'</span>, <span class="keyword">function</span>(styleguide) {
+});
+</code></pre></div>
+<p>A <strong>styleguide</strong> is something like:</p>
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"order"</span>: <span class="number">1</span>,
+    <span class="string">"filepath"</span>: <span class="string">"./foo.styl"</span>,
+    <span class="string">"css"</span>: <span class="string">"button.classy {.....}"</span>,
+    <span class="string">"sections"</span>: [....]
+}
+</code></pre></div><h3 id="stylesync">styleSync</h3>
+<p>Ganam style a directory synchronously:</p>
+<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
+<span class="keyword">var</span> styleguide = ganam.styleSync(<span class="string">'./bar.styl'</span>);
+</code></pre></div><h2 id="nico">Nico</h2>
+<p>We have a live example for you: <a href="http://lab.lepture.com/ganam/guide/buttons">styleguide</a>.
+The code is of this styleguide is located at: <a href="https://github.com/lepture/ganam/blob/master/docs/guide">ganam/docs/guide</a>.
+This styleguide is built with <a href="http://lab.lepture.com/nico/">nico</a>.</p>
+
+<p>Find more information about nico and get nico with:</p>
+
+<pre>$ npm install nico -g
+</pre>
+
+<p>Have a look at the config file <a href="https://github.com/lepture/ganam/blob/master/nico.json">nico.json</a> of this project, and learn how to use it. BTW, you must have <code>ganam</code> installed to active <code>GanamWriter</code>.</p>
+</div>
+</div>
+</div>
+    <div class="footer">
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.0</p>
+    </div>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="./static/one.js"></script>
+  </body>
+</html>
