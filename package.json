@@ -1,10 +1,10 @@
 {
   "name": "ganam",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Ganam style is a style guide parser",
   "author": "Hsiaoming Yang <lepture@me.com>",
   "keywords": [
-    "style", "nico", "css", "parser"
+    "style", "kss", "css", "parser", "styleguide"
   ],
   "dependencies": {
     "stylus": "*"
