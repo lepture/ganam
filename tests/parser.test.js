@@ -39,7 +39,17 @@ describe('parse', function() {
   });
 
   it('should be a valid section', function() {
-    var section = parser(lineComments)[0];
+    var section = parser(blockComments)[0];
+    expect(section.name).to.equal('1.1');
+    expect(section.title).to.equal('Classy Buttons');
+    expect(section.description).to.contain('widely');
+    expect(section.modifiers).to.have.length(3);
+    expect(section.examples).to.have.length(4);
+  });
+
+  it('should be a valid section without `Examples:`', function() {
+    var comments = blockComments.replace('Examples:\n', '');
+    var section = parser(comments)[0];
     expect(section.name).to.equal('1.1');
     expect(section.title).to.equal('Classy Buttons');
     expect(section.description).to.contain('widely');
