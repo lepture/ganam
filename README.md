@@ -88,7 +88,7 @@ var sections = ganam(code);
 
 ### style
 
-Ganam style a directory:
+Ganam style a file:
 
 ```javascript
 var ganam = require('ganam');
@@ -109,7 +109,7 @@ A **styleguide** is something like:
 
 ### styleSync
 
-Ganam style a directory synchronously:
+Ganam style a file synchronously:
 
 ```javascript
 var ganam = require('ganam');
