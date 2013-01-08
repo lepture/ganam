@@ -119,7 +119,7 @@ var styleguide = ganam.styleSync('./bar.styl');
 ## Nico
 
 We have a live example for you: [styleguide](http://lab.lepture.com/ganam/guide/buttons).
-The code is of this styleguide is located at: [ganam/docs/guide](https://github.com/lepture/ganam/blob/master/docs/guide).
+The code of this styleguide is located at: [ganam/docs/guide](https://github.com/lepture/ganam/blob/master/docs/guide).
 This styleguide is built with [nico](http://lab.lepture.com/nico/).
 
 Find more information about nico and get nico with:
