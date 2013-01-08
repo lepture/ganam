@@ -2,6 +2,9 @@
 
 -------------
 
+[![building status](https://secure.travis-ci.org/lepture/ganam.png?branch=master)](https://travis-ci.org/lepture/ganam)
+
+
 Ganam style is a style guide render, inspired by [kneath/kss](https://github.com/kneath/kss).
 It is written in nodejs, helps web developers to write a style guide.
 
@@ -48,7 +51,3 @@ Ganam style a directory synchronously:
 var ganam = require('ganam');
 var styleguide = ganam.styleSync('stylus');
 ```
-
-## Nico
-
-Ganam style provides a [nico](http://lab.lepture.com/nico/) writer
