@@ -19,5 +19,6 @@ describe('styleFileSync', function() {
     var data = style.styleFileSync(__dirname + '/cases/one-section.styl');
     expect(data.css).to.contain('#d64;');
     expect(data.order).to.equal(1);
+    expect(data.css).to.contain('pseudo-class');
   });
 });
