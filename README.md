@@ -19,7 +19,33 @@ $ npm install ganam
 
 ## Syntax
 
-Writing a style (stylus, less, css) that ganam can parse.
+Writing a style (stylus, css) that ganam can parse. A basic overview:
+
+```css
+/*
+1.1 Classy Buttons
+
+Classy buttons is clickable form action buttons,
+it is widely usage in forms.
+
+:hover - button when hovered
+:disabled - button when disabled
+.disabled - the same as :disabled
+
+Examples:
+
+    <button class="classy {{modifier}}">Button</button
+    <a class="button-classy {{modifier}}">Button</a>
+*/
+
+button.classy,
+a.button-classy {
+  color: #d64;
+}
+button.classy:hover {
+  color: #000;
+}
+```
 
 
 ## Library
@@ -39,7 +65,7 @@ Ganam style a directory:
 
 ```javascript
 var ganam = require('ganam');
-ganam.style('stylus', function(styleguide) {
+ganam.style('./foo.styl', function(styleguide) {
 });
 ```
 
@@ -49,5 +75,5 @@ Ganam style a directory synchronously:
 
 ```javascript
 var ganam = require('ganam');
-var styleguide = ganam.styleSync('stylus');
+var styleguide = ganam.styleSync('./bar.styl');
 ```
