@@ -56,4 +56,21 @@ describe('parse', function() {
     expect(section.modifiers).to.have.length(3);
     expect(section.examples).to.have.length(4);
   });
+
+  it('has an example file', function() {
+    var comments = [
+      '// 1.1 Classy Buttons',
+      '//',
+      '// Classy buttons is clickable form action buttons,',
+      '// it is widely usage in forms.',
+      '//',
+      '// Examples: foo/bar.html',
+      '//   <button class="classy {{modifier}}">Button</button',
+      '//   <a class="button-classy {{modifier}}">Button</a>'
+    ].join('\n');
+
+    var section = parser(comments)[0];
+    expect(section.examples).to.not.be.ok();
+    expect(section.exampleFile).to.equal('foo/bar.html');
+  });
 });
