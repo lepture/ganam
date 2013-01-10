@@ -22,8 +22,8 @@ describe('styleFile', function() {
 
   it('can parse included examples', function(done) {
     style.styleFile(__dirname + '/cases/include-example.css', function(data) {
-      var section = data.sections[0];
-      expect(section.examples[0]).to.contain('<h1>foo</h1>');
+      var example = data.sections[0].examples[0].code;
+      expect(example).to.contain('<h1>foo</h1>');
       done();
     });
   });
@@ -47,7 +47,7 @@ describe('styleFileSync', function() {
 
   it('can parse included examples', function() {
     var data = style.styleFileSync(__dirname + '/cases/include-example.css')
-    var section = data.sections[0];
-    expect(section.examples[0]).to.contain('<h1>foo</h1>');
+    var example = data.sections[0].examples[0].code;
+    expect(example).to.contain('<h1>foo</h1>');
   });
 });
