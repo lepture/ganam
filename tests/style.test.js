@@ -19,6 +19,14 @@ describe('styleFile', function() {
       done();
     });
   });
+
+  it('can parse included examples', function(done) {
+    style.styleFile(__dirname + '/cases/include-example.css', function(data) {
+      var section = data.sections[0];
+      expect(section.examples[0]).to.contain('<h1>foo</h1>');
+      done();
+    });
+  });
 });
 
 
@@ -35,5 +43,11 @@ describe('styleFileSync', function() {
     expect(data.css).to.contain('#d64;');
     expect(data.order).to.equal(1);
     expect(data.css).to.contain('pseudo-class');
+  });
+
+  it('can parse included examples', function() {
+    var data = style.styleFileSync(__dirname + '/cases/include-example.css')
+    var section = data.sections[0];
+    expect(section.examples[0]).to.contain('<h1>foo</h1>');
   });
 });
