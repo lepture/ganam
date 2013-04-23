@@ -6,7 +6,4 @@ language: node_js
 node_js:
   - "0.8"
 
-install:
-  - npm install mocha mocha-lcov-reporter expect.js jscoverage coveralls
-
 after_success: make coveralls

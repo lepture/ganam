@@ -23,7 +23,10 @@
   "devDependencies": {
     "jshint": "*",
     "mocha": "*",
-    "expect.js": "*"
+    "mocha-lcov-reporter": "*",
+    "expect.js": "*",
+    "jscoverage": "*",
+    "coveralls": "*"
   },
   "scripts": {
     "test": "make test"
