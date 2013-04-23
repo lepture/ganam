@@ -28,7 +28,7 @@ coverage:
 
 coveralls:
 	@node_modules/.bin/jscoverage lib lib-cov
-	@COVERAGE=1 $(MAKE) test reporter=mocha-lcov-repoter | node_modules/.bin/coveralls
+	@COVERAGE=1 $(MAKE) test reporter=mocha-lcov-reporter | node_modules/.bin/coveralls
 	@rm -fr lib-cov
 
 theme = $(HOME)/.spm/themes/one
