@@ -26,6 +26,11 @@ coverage:
 	@echo "Built Report to ${out}"
 	@echo
 
+coveralls:
+	@node_modules/.bin/jscoverage lib lib-cov
+	@COVERAGE=1 $(MAKE) test reporter=mocha-lcov-repoter | node_modules/.bin/coveralls
+	@rm -fr lib-cov
+
 theme = $(HOME)/.spm/themes/one
 documentation:
 	@cp README.md docs/index.md
