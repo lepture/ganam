@@ -3,6 +3,7 @@
 -------------
 
 [![building status](https://secure.travis-ci.org/lepture/ganam.png?branch=master)](https://travis-ci.org/lepture/ganam)
+[![Coverage Status](https://coveralls.io/repos/lepture/ganam/badge.png?branch=master)](https://coveralls.io/r/lepture/ganam)
 
 
 Ganam style is a style guide render, inspired by [kneath/kss](https://github.com/kneath/kss).
