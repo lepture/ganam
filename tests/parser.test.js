@@ -34,6 +34,10 @@ var blockComments = [
 
 
 describe('parse', function() {
+  it('can parse nothing', function() {
+    expect(parser('// foo')).to.have.length(0);
+  });
+
   it('should have one section', function() {
     expect(parser(blockComments)).to.have.length(1);
   });

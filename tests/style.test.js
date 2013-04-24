@@ -5,7 +5,7 @@ var style = require('../lib/style');
 
 describe('styleFile', function() {
   it('style stylus async', function(done) {
-    style.styleFile(__dirname + '/cases/one-section.styl', function(data) {
+    style.styleFile(__dirname + '/cases/one-section.styl', {encoding: 'utf8'}, function(data) {
       expect(data.css).to.contain('#d64;');
       expect(data.order).to.equal(1);
       done();
@@ -13,9 +13,16 @@ describe('styleFile', function() {
   });
 
   it('style css async', function(done) {
-    style.styleFile(__dirname + '/cases/one-section.css', function(data) {
+    style.styleFile(__dirname + '/cases/one-section.css', {encoding: 'utf8'}, function(data) {
       expect(data.css).to.contain('#d64;');
       expect(data.order).to.equal(1);
+      done();
+    });
+  });
+
+  it('has no section', function(done) {
+    style.styleFile(__dirname + '/cases/null-section.css', function(data) {
+      expect(data).to.equal(null);
       done();
     });
   });
@@ -39,11 +46,17 @@ describe('styleFileSync', function() {
   });
 
   it('style css sync', function() {
-    var data = style.styleFileSync(__dirname + '/cases/one-section.css');
+    var data = style.styleFileSync(__dirname + '/cases/one-section.css', {encoding: 'utf8'});
     expect(data.css).to.contain('#d64;');
     expect(data.order).to.equal(1);
     expect(data.css).to.contain('pseudo-class');
   });
+
+  it('has no section', function() {
+    var data = style.styleFileSync(__dirname + '/cases/null-section.css');
+    expect(data).to.equal(null);
+  });
+
 
   it('can parse included examples', function() {
     var data = style.styleFileSync(__dirname + '/cases/include-example.css')
