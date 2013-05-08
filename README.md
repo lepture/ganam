@@ -87,7 +87,7 @@ var sections = ganam(code);
 ```
 
 
-### style
+### style(filepath [, options], callback)
 
 Ganam style a file:
 
@@ -108,7 +108,9 @@ A **styleguide** is something like:
 }
 ```
 
-### styleSync
+You can pass options for `stylus`.
+
+### styleSync(filepath [, options])
 
 Ganam style a file synchronously:
 
@@ -117,16 +119,8 @@ var ganam = require('ganam');
 var styleguide = ganam.styleSync('./bar.styl');
 ```
 
-## Nico
+## Ganam CLI
 
-We have a live example for you: [styleguide](http://lab.lepture.com/ganam/guide/buttons).
-The code of this styleguide is located at: [ganam/docs/guide](https://github.com/lepture/ganam/blob/master/docs/guide).
-This styleguide is built with [nico](http://lab.lepture.com/nico/).
+The missing command line tools is not ready now.
 
-Find more information about nico and get nico with:
-
-```
-$ npm install nico -g
-```
-
-Have a look at the config file [nico.json](https://github.com/lepture/ganam/blob/master/nico.json) of this project, and learn how to use it. BTW, you must have `ganam` installed to active `GanamWriter`.
+Watch it: https://github.com/lepture/ganam-cli
