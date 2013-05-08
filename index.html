@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.2.0">
+    <meta name="generator" content="nico 0.3.1">
     <meta name="theme" content="one 0.1">
     <title>Ganam Style</title>
     <link rel="stylesheet" href="./static/one.css" />
@@ -29,18 +29,17 @@
     <div class="document">
 <div class="hentry">
   <h1 class="entry-title">Ganam Style</h1>
-  <div class="entry-content"><p><a href="https://travis-ci.org/lepture/ganam"><img src="https://secure.travis-ci.org/lepture/ganam.png?branch=master" alt="building status"/></a></p>
+  <div class="entry-content"><p><a href="https://travis-ci.org/lepture/ganam"><img src="https://secure.travis-ci.org/lepture/ganam.png?branch=master" alt="building status"/></a>
+<a href="https://coveralls.io/r/lepture/ganam"><img src="https://coveralls.io/repos/lepture/ganam/badge.png?branch=master" alt="Coverage Status"/></a></p>
 
 <p>Ganam style is a style guide render, inspired by <a href="https://github.com/kneath/kss">kneath/kss</a>.
 It is written in nodejs, helps web developers to write a style guide.</p>
+
+<p>View a live demo: <a href="http://lab.lepture.com/ganam/guide/buttons.html">http://lab.lepture.com/ganam/guide/buttons.html</a></p>
 <h2 id="installation">Installation</h2>
 <p>It&#39;s easy to install ganam with npm:</p>
-
 <pre>$ npm install ganam
-</pre>
-
-<p>It is highly tested, find the <a href="http://lab.lepture.com/ganam/coverage">test coverage</a>.</p>
-<h2 id="syntax">Syntax</h2>
+</pre><h2 id="syntax">Syntax</h2>
 <p>Writing a style (stylus, css) that ganam can parse. A basic overview:</p>
 <div class="highlight"><pre><code class="css"><span class="comment">/*
 1.1 Classy Buttons
@@ -90,7 +89,7 @@ Examples:
         ...
     ]
 }
-</code></pre></div><h3 id="style">style</h3>
+</code></pre></div><h3 id="style-filepath-options-callback">style(filepath [, options], callback)</h3>
 <p>Ganam style a file:</p>
 <div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
 ganam.style(<span class="string">'./foo.styl'</span>, <span class="keyword">function</span>(styleguide) {
@@ -103,26 +102,22 @@ ganam.style(<span class="string">'./foo.styl'</span>, <span class="keyword">func
     <span class="string">"css"</span>: <span class="string">"button.classy {.....}"</span>,
     <span class="string">"sections"</span>: [....]
 }
-</code></pre></div><h3 id="stylesync">styleSync</h3>
+</code></pre></div>
+<p>You can pass options for <code>stylus</code>.</p>
+<h3 id="stylesync-filepath-options">styleSync(filepath [, options])</h3>
 <p>Ganam style a file synchronously:</p>
 <div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
 <span class="keyword">var</span> styleguide = ganam.styleSync(<span class="string">'./bar.styl'</span>);
-</code></pre></div><h2 id="nico">Nico</h2>
-<p>We have a live example for you: <a href="http://lab.lepture.com/ganam/guide/buttons">styleguide</a>.
-The code is of this styleguide is located at: <a href="https://github.com/lepture/ganam/blob/master/docs/guide">ganam/docs/guide</a>.
-This styleguide is built with <a href="http://lab.lepture.com/nico/">nico</a>.</p>
-
-<p>Find more information about nico and get nico with:</p>
-
-<pre>$ npm install nico -g
+</code></pre></div><h2 id="ganam-cli">Ganam CLI</h2>
+<p>Get the command line tools with:</p>
+<pre>$ npm install ganam-cli -g
 </pre>
-
-<p>Have a look at the config file <a href="https://github.com/lepture/ganam/blob/master/nico.json">nico.json</a> of this project, and learn how to use it. BTW, you must have <code>ganam</code> installed to active <code>GanamWriter</code>.</p>
+<p>Watch it: <a href="https://github.com/lepture/ganam-cli">https://github.com/lepture/ganam-cli</a></p>
 </div>
 </div>
 </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.0</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.3.1</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="./static/one.js"></script>
     <div class="github"><a class="github-link" href="https://github.com/lepture/ganam">Fork me on GitHub</a></div>

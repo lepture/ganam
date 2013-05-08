@@ -15,7 +15,7 @@ p, pre,
 ul, ol, dl,
 form, hr,
 .content div {
-  margin: 0.62em 0 1.62em;
+  margin: 0.62em 0 1em;
 }
 
 h1,
@@ -98,43 +98,19 @@ tt {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   overflow-x: scroll;
 }
-
 pre {
-  border-left: 1px solid RGB(223, 223, 218);
-  padding: 0.2em 1em;
-  margin-left: 1em;
+  border: 1px solid RGB(223, 223, 218);
+  border-radius: 3px;
+  background-color: #f7f7f7;
+  padding: 0.2em 0.6em;
 }
 
 blockquote {
-  margin: 0.62em 2em 1em;
-  padding: 0.62em 2em 0.2em 0;
+  margin: 0;
+  padding: 0 0 0 7px;
   color: #555;
+  border-left: 3px solid #d64;
 }
-blockquote:before {
-  display: block;
-  content: "“";
-  color: #BABABA;
-  font-size: 48px;
-  font-family: "Georgia", sans-serif;
-  float: left;
-  margin-top: -10px;
-  margin-left: -10px;
-  padding-right: 2px;
-}
-blockquote:after {
-  content: " ";
-  display: block;
-  visibility: none;
-  clear: both;
-}
-@media (max-width: 650px) {
-  blockquote {
-    padding-right: 5px;
-    margin-left: 10px;
-    margin-right: 5px;
-}
-}
-
 blockquote p:last-child {
   margin-bottom: 0.2em;
 }
@@ -216,23 +192,24 @@ hr {
   padding: 3px 10px;
   opacity: 0.9;
 }
+.navigation .menu {
+  text-align: right;
+}
 .navigation .home {
+  float: left;
+  margin-right: 30px;
   font-weight: bold;
   text-transform: uppercase;
   color: #555;
-  color: rgba(222, 222, 222, 0.5);
-}
-.navigation .menu {
-  float: right;
-  text-align: right;
+  color: rgba(222, 222, 222, 0.8);
 }
 .menu a {
   margin-left: 14px;
-  color: #dadada;
+  color: #eee;
 }
 .navigation a:hover {
   text-decoration: none;
-  color: #c2def6;
+  color: #ffc38c;
 }
 .container {
   max-width: 640px;
@@ -259,7 +236,7 @@ hr {
   margin: 40px -30px 30px;
   padding: 14px 30px;
   border-bottom: 1px solid #eee;
-  text-transform: uppercase;
+  color: #d64;
 }
 @media (max-width: 680px) {
   .entry-title, .entry-content h2 {
@@ -269,6 +246,13 @@ hr {
 }
 .entry-content h2 {
   border-top: 1px solid #eee;
+}
+.entry-content p code {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 0 2px;
+  font-size: 12px;
+  color: #876;
 }
 
 ol.entry-list {
