@@ -18,8 +18,6 @@ It's easy to install ganam with npm:
 $ npm install ganam
 ```
 
-It is highly tested, find the [test coverage](http://lab.lepture.com/ganam/coverage).
-
 ## Syntax
 
 Writing a style (stylus, css) that ganam can parse. A basic overview:
