@@ -33,6 +33,7 @@ coveralls:
 
 theme = $(HOME)/.spm/themes/one
 documentation:
+	@ganam -I node_modules/nib/lib -o _site/guide docs/guide
 	@cp README.md docs/index.md
 	@nico build -C nico.json -q --theme=${theme}
 

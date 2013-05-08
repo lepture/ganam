@@ -9,6 +9,8 @@
 Ganam style is a style guide render, inspired by [kneath/kss](https://github.com/kneath/kss).
 It is written in nodejs, helps web developers to write a style guide.
 
+View a live demo: http://lab.lepture.com/ganam/guide/buttons.html
+
 
 ## Installation
 
@@ -119,6 +121,8 @@ var styleguide = ganam.styleSync('./bar.styl');
 
 ## Ganam CLI
 
-The missing command line tools is not ready now.
+Get the command line tools with:
+
+    $ npm install ganam-cli -g
 
 Watch it: https://github.com/lepture/ganam-cli

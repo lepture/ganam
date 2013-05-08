@@ -15,7 +15,6 @@
   "writers": [
     "nico.PageWriter",
     "nico.FileWriter",
-    "nico.StaticWriter",
-    "nico.GanamWriter"
+    "nico.StaticWriter"
   ]
 }
