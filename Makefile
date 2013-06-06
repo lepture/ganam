@@ -16,7 +16,7 @@ jsfiles := $(shell find . -name '*.js' ! -path "*node_modules/*" ! -path "*_them
 lint:
 	@node_modules/.bin/jshint ${jsfiles} --config=scripts/lint.json
 
-out = _site/coverage.html
+out = coverage.html
 coverage:
 	@rm -fr lib-cov
 	@jscoverage lib lib-cov
@@ -31,17 +31,10 @@ coveralls:
 	@COVERAGE=1 $(MAKE) test reporter=mocha-lcov-reporter | node_modules/.bin/coveralls
 	@rm -fr lib-cov
 
-theme = $(HOME)/.spm/themes/one
-documentation:
-	@ganam -I node_modules/nib/lib -o _site/guide docs/guide
-	@cp README.md docs/index.md
-	@nico build -C nico.json -q --theme=${theme}
+ganam:
+	@ganam example -o _site
 
-server:
-	@cp README.md docs/index.md
-	@nico server -C nico.json -v --watch --theme=${theme}
-
-publish: clean documentation coverage
+publish: clean ganam
 	@ghp-import _site -p
 
 clean:

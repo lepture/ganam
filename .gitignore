@@ -21,4 +21,4 @@ lib-cov/
 .settings
 .yml
 _site
-docs/index.md
+coverage.html

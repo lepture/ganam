@@ -1,15 +1,11 @@
 # Ganam Style
 
--------------
-
-[![building status](https://secure.travis-ci.org/lepture/ganam.png?branch=master)](https://travis-ci.org/lepture/ganam)
+[![building status](https://travis-ci.org/lepture/ganam.png?branch=master)](https://travis-ci.org/lepture/ganam)
 [![Coverage Status](https://coveralls.io/repos/lepture/ganam/badge.png?branch=master)](https://coveralls.io/r/lepture/ganam)
 
 
 Ganam style is a style guide render, inspired by [kneath/kss](https://github.com/kneath/kss).
 It is written in nodejs, helps web developers to write a style guide.
-
-View a live demo: http://lab.lepture.com/ganam/guide/buttons.html
 
 
 ## Installation
@@ -19,6 +15,14 @@ It's easy to install ganam with npm:
 ```
 $ npm install ganam
 ```
+
+IF YOU ARE NOT A DEVELOPER, YOU MAY NEED **ganam-cli** INSTEAD:
+
+```
+$ npm install ganam-cli -g
+```
+
+FIND MORE DOCUMENTATION AT <http://lab.lepture.com/ganam-cli/>.
 
 ## Syntax
 
