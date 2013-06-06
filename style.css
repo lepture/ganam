@@ -1,0 +1,322 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+body * {
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  font: 13px/1.4 Helvetica, arial, sans-serif;
+  color: #333;
+  width: 920px;
+  margin: 0 auto;
+  padding: 48px 0 60px;
+  zoom: 1;
+}
+.container:after {
+  display: block;
+  clear: both;
+  content: ' ';
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1em 10px;
+  text-align: right;
+  font-size: 13px;
+  border-top: 1px solid #eee;
+  color: #777;
+  width: 100%;
+}
+h1.title {
+  font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", "SimSun", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 46px;
+}
+h1.title a {
+  color: #222;
+  text-decoration: none;
+}
+h1.title a:hover {
+  color: #666;
+}
+.menu-container {
+  float: left;
+  width: 200px;
+  padding: 3px;
+  background: #efefef;
+  border-radius: 2px;
+}
+.menu {
+  margin: 0;
+  padding: 0;
+  background: #fafafb;
+  border-radius: 2px;
+  border: 1px solid #d8d8d8;
+  list-style: none;
+}
+.menu li {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #eee;
+}
+.menu li:first-child {
+  border-top: none;
+}
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: #4183c4;
+  padding: 8px 10px 8px 8px;
+  text-shadow: 0 1px 0 white;
+  border-left: 2px solid #fafafb;
+}
+.menu .active a {
+  background: white;
+  border-left: 2px solid #d26911;
+  font-weight: bold;
+  color: #222;
+  cursor: default;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.styleguide {
+  float: right;
+  width: 700px;
+}
+.readme {
+  float: right;
+  width: 680px;
+  margin-left: 10px;
+}
+.section {
+  border: 1px solid #ddd;
+  border-top-color: #333;
+  margin-bottom: 30px;
+}
+.section-title {
+  margin: 0;
+  padding: 4px 10px;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #333;
+}
+.section-body {
+  padding: 1px 10px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+.example {
+  position: relative;
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+.example-name {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #999;
+  background: #f9f9f9;
+  font-size: 11px;
+  padding: 5px 15px;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.section-html {
+  padding: 15px;
+  background: #edf6f8;
+  border-top: 1px solid #dde7ea;
+  overflow: auto;
+}
+.highlight pre {
+  color: #666;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+.highlight .tag {
+  color: #268bd2;
+}
+.highlight .attribute {
+  color: #b58900;
+}
+.highlight .value {
+  color: #2aa198;
+}
+/* readme typography */
+.readme {
+  font: 400 16px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", "SimSun", sans-serif;
+  color: #4c4c4c;
+}
+
+.readme h1,
+.readme h2,
+.readme h3,
+.readme h4,
+.readme h5,
+.readme h6 {
+  color: #222;
+  margin: 1.62em 0 0.62em;
+}
+.readme h1 {
+  font-size: 1.8em;
+}
+.readme > h1 {
+  margin-top: 0;
+}
+.readme h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #eee;
+}
+.readme h3 {
+  font-size: 1.25em;
+}
+.readme h4 {
+  font-size: 1.18em;
+}
+.readme h5,
+.readme h6 {
+  font-size: 1em;
+}
+.readme h6 {
+  font-weight: 500;
+}
+
+.readme p {
+  margin: 0.62em 0 1.62em;
+}
+.readme a {
+  color: #111;
+  word-wrap: break-word;
+}
+.readme a:hover {
+  color: #555;
+}
+.readme a.image {
+  border-bottom: none;
+}
+.readme strong {
+  font-weight: 700;
+  color: #222;
+}
+.readme em {
+  font-style: italic;
+  color: #222;
+}
+.readme img {
+  max-width: 98%;
+  margin: 0.2em 0;
+}
+.readme hr {
+  border: 0 none;
+  margin-bottom: 2em;
+}
+.readme hr:after {
+  color: #9f9f95;
+  font-size: 1.1em;
+  display: block;
+  content: "* * *";
+  text-align: center;
+  letter-spacing: .6em;
+}
+.readme blockquote {
+  margin: 0.62em 0 1.62em;
+  padding-left: 18px;
+  border-left: 4px solid #dadada;
+  color: #8a8a8a;
+}
+.readme ul,
+.readme ol {
+  margin-left: 14px;
+  padding-left: 16px;
+}
+.readme ul {
+  list-style-type: square;
+}
+.readme ol {
+  list-style-type: decimal;
+}
+.readme li {
+  margin-bottom: 0.6em;
+}
+.readme li ul,
+.readme li,
+.readme ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 14px;
+}
+.readme li ul {
+  list-style-type: disc;
+}
+.readme li ul ul {
+  list-style-type: circle;
+}
+.readme li p {
+  margin: 0.4em 0 0.6em;
+}
+.readme code,
+.readme tt {
+  color: #808080;
+  font-size: 0.96em;
+  background-color: #f9f9f7;
+  padding: 1px 2px;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+  font-family: "Inconsolata", "Menlo", monospace;
+}
+.readme pre {
+  padding: 7px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  overflow: auto;
+  line-height: 1.5;
+  font-size: 0.96em;
+  font-family: "Inconsolata", "Menlo", monospace;
+  color: #4c4c4c;
+  background-color: #f9f9f7;
+}
+.readme pre code, .readme pre tt {
+  color: #4c4c4c;
+  border: none;
+  background-color: none;
+  padding: 0;
+}
+.readme table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1.5em;
+  font-size: 0.96em;
+}
+.readme th,
+.readme td {
+  text-align: left;
+  padding: 4px 8px 4px 10px;
+  border: 1px solid #dadada;
+}
+.readme td {
+  vertical-align: top;
+}
+.readme tr:nth-child(even) {
+  background-color: #efefee;
+}
+@media (max-width: 920px) {
+  .container {
+    padding-top: 10px;
+    width: 98%;
+  }
+  .menu-container {
+    float: none;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .readme, .styleguide {
+    float: none;
+    width: 98%;
+  }
+}

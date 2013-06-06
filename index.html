@@ -1,47 +1,38 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.3.1">
-    <meta name="theme" content="one 0.1">
-    <title>Ganam Style</title>
-    <link rel="stylesheet" href="./static/one.css" />
-    <link rel="stylesheet" href="./static/syntax.css" />
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-21475122-5']);
-      _gaq.push(['_trackPageview']);
-      _gaq.push(['_trackPageLoadTime']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
+    <meta charset="UTF-8">
+    <title>ganam</title>
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/css">
+      
+    </style>
   </head>
   <body>
-    <div class="navigation" role="navigation">
-      <div class="container">
-        <a class="home" href="./">Ganam Style</a>
+    <div class="container">
+      <h1 class="title"><a href="./">ganam</a></h1>
+      <div class="menu-container">
+        <ol class="menu">
+          <li class="active"><a href="./">Overview</a></li>
+          <li><a href="buttons.html">Buttons</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ol>
       </div>
-    </div>
-    <div class="document">
-<div class="hentry">
-  <h1 class="entry-title">Ganam Style</h1>
-  <div class="entry-content"><p><a href="https://travis-ci.org/lepture/ganam"><img src="https://secure.travis-ci.org/lepture/ganam.png?branch=master" alt="building status"/></a>
-<a href="https://coveralls.io/r/lepture/ganam"><img src="https://coveralls.io/repos/lepture/ganam/badge.png?branch=master" alt="Coverage Status"/></a></p>
-
+      <div class="readme">
+        <h1>Ganam Style</h1>
+<p><a href="https://travis-ci.org/lepture/ganam"><img src="https://travis-ci.org/lepture/ganam.png?branch=master" alt="building status"></a>
+<a href="https://coveralls.io/r/lepture/ganam"><img src="https://coveralls.io/repos/lepture/ganam/badge.png?branch=master" alt="Coverage Status"></a></p>
 <p>Ganam style is a style guide render, inspired by <a href="https://github.com/kneath/kss">kneath/kss</a>.
 It is written in nodejs, helps web developers to write a style guide.</p>
-
-<p>View a live demo: <a href="http://lab.lepture.com/ganam/guide/buttons.html">http://lab.lepture.com/ganam/guide/buttons.html</a></p>
-<h2 id="installation">Installation</h2>
+<h2>Installation</h2>
 <p>It&#39;s easy to install ganam with npm:</p>
-<pre>$ npm install ganam
-</pre><h2 id="syntax">Syntax</h2>
+<pre><code>$ npm install ganam</code></pre>
+<p>IF YOU ARE NOT A DEVELOPER, YOU MAY NEED <strong>ganam-cli</strong> INSTEAD:</p>
+<pre><code>$ npm install ganam-cli -g</code></pre>
+<p>FIND MORE DOCUMENTATION AT <a href="http://lab.lepture.com/ganam-cli/">http://lab.lepture.com/ganam-cli/</a>.</p>
+<h2>Syntax</h2>
 <p>Writing a style (stylus, css) that ganam can parse. A basic overview:</p>
-<div class="highlight"><pre><code class="css"><span class="comment">/*
+<pre><code class="lang-css">/*
 1.1 Classy Buttons
 
 Classy buttons is clickable form action buttons,
@@ -53,73 +44,65 @@ it is widely usage in forms.
 
 Examples:
 
-    &lt;button class="classy {{modifier}}"&gt;Button&lt;/button
-    &lt;a class="button-classy {{modifier}}"&gt;Button&lt;/a&gt;
-*/</span>
+    &lt;button class=&quot;classy {{modifier}}&quot;&gt;Button&lt;/button
+    &lt;a class=&quot;button-classy {{modifier}}&quot;&gt;Button&lt;/a&gt;
+*/
 
-<span class="tag">button</span><span class="class">.classy</span>,
-<span class="tag">a</span><span class="class">.button-classy</span> <span class="rules">{
-  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#d64</span>;</span></span>
-<span class="rule">}</span></span>
-<span class="tag">button</span><span class="class">.classy</span><span class="pseudo">:hover</span> <span class="rules">{
-  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#000</span>;</span></span>
-<span class="rule">}</span></span>
-</code></pre></div>
+button.classy,
+a.button-classy {
+  color: #d64;
+}
+button.classy:hover {
+  color: #000;
+}</code></pre>
 <p>Find more information in the <a href="https://github.com/lepture/ganam/blob/master/docs/guide">example guide</a>.</p>
-<h2 id="library">Library</h2><h3 id="ganam">ganam</h3>
+<h2>Library</h2>
+<h3>ganam</h3>
 <p>Parse code and get the sections:</p>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
-<span class="keyword">var</span> sections = ganam(code);
-</code></pre></div>
+<pre><code class="lang-javascript">var ganam = require(&#39;ganam&#39;);
+var sections = ganam(code);</code></pre>
 <p><strong>Sections</strong> is a list of section, a section contains:</p>
-<div class="highlight"><pre><code class="javascript">{
-    <span class="string">"name"</span>: <span class="string">"1.1"</span>,
-    <span class="string">"title"</span>: <span class="string">"Classy Buttons"</span>
-    <span class="string">"description"</span>: <span class="string">"Classy buttons is clickable form action buttons,\nit is widely usage in forms."</span>,
-    <span class="string">"modifiers"</span>: [
-        {<span class="string">"name"</span>: <span class="string">":hover"</span>, <span class="string">"description"</span>: <span class="string">"button when hovered"</span>},
-        {<span class="string">"name"</span>: <span class="string">":disabled"</span>, <span class="string">"description"</span>: <span class="string">"button when disabled"</span>},
-        {<span class="string">"name"</span>: <span class="string">".disabled"</span>, <span class="string">"description"</span>: <span class="string">"the same as :disabled"</span>}
+<pre><code class="lang-javascript">{
+    &quot;name&quot;: &quot;1.1&quot;,
+    &quot;title&quot;: &quot;Classy Buttons&quot;
+    &quot;description&quot;: &quot;Classy buttons is clickable form action buttons,\nit is widely usage in forms.&quot;,
+    &quot;modifiers&quot;: [
+        {&quot;name&quot;: &quot;:hover&quot;, &quot;description&quot;: &quot;button when hovered&quot;},
+        {&quot;name&quot;: &quot;:disabled&quot;, &quot;description&quot;: &quot;button when disabled&quot;},
+        {&quot;name&quot;: &quot;.disabled&quot;, &quot;description&quot;: &quot;the same as :disabled&quot;}
     ],
-    <span class="string">"html"</span>: <span class="string">"&lt;button class='classy {{modifier}}'&gt;Button&lt;/button\n&lt;a class='button-classy {{modifier}}'&gt;Button&lt;/a&gt;"</span>,
-    <span class="string">"examples"</span>: [
-        {<span class="string">"name"</span>: <span class="string">""</span>, <span class="string">"code"</span>: <span class="string">"&lt;button class='classy '&gt;Button&lt;/button&gt;......"</span>},
-        {<span class="string">"name"</span>: <span class="string">":hover"</span>, <span class="string">"code"</span>: <span class="string">"&lt;button class='classy pseudo-class-hover'&gt;Button&lt;/button&gt;......"</span>},
-        {<span class="string">"name"</span>: <span class="string">":disabled"</span>, <span class="string">"code"</span>: <span class="string">"&lt;button class='classy pseudo-class-disabled'&gt;Button&lt;/button&gt;......"</span>},
+    &quot;html&quot;: &quot;&lt;button class=&#39;classy {{modifier}}&#39;&gt;Button&lt;/button\n&lt;a class=&#39;button-classy {{modifier}}&#39;&gt;Button&lt;/a&gt;&quot;,
+    &quot;examples&quot;: [
+        {&quot;name&quot;: &quot;&quot;, &quot;code&quot;: &quot;&lt;button class=&#39;classy &#39;&gt;Button&lt;/button&gt;......&quot;},
+        {&quot;name&quot;: &quot;:hover&quot;, &quot;code&quot;: &quot;&lt;button class=&#39;classy pseudo-class-hover&#39;&gt;Button&lt;/button&gt;......&quot;},
+        {&quot;name&quot;: &quot;:disabled&quot;, &quot;code&quot;: &quot;&lt;button class=&#39;classy pseudo-class-disabled&#39;&gt;Button&lt;/button&gt;......&quot;},
         ...
     ]
-}
-</code></pre></div><h3 id="style-filepath-options-callback">style(filepath [, options], callback)</h3>
+}</code></pre>
+<h3>style(filepath [, options], callback)</h3>
 <p>Ganam style a file:</p>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
-ganam.style(<span class="string">'./foo.styl'</span>, <span class="keyword">function</span>(styleguide) {
-});
-</code></pre></div>
+<pre><code class="lang-javascript">var ganam = require(&#39;ganam&#39;);
+ganam.style(&#39;./foo.styl&#39;, function(styleguide) {
+});</code></pre>
 <p>A <strong>styleguide</strong> is something like:</p>
-<div class="highlight"><pre><code class="javascript">{
-    <span class="string">"order"</span>: <span class="number">1</span>,
-    <span class="string">"filepath"</span>: <span class="string">"./foo.styl"</span>,
-    <span class="string">"css"</span>: <span class="string">"button.classy {.....}"</span>,
-    <span class="string">"sections"</span>: [....]
-}
-</code></pre></div>
+<pre><code class="lang-javascript">{
+    &quot;order&quot;: 1,
+    &quot;filepath&quot;: &quot;./foo.styl&quot;,
+    &quot;css&quot;: &quot;button.classy {.....}&quot;,
+    &quot;sections&quot;: [....]
+}</code></pre>
 <p>You can pass options for <code>stylus</code>.</p>
-<h3 id="stylesync-filepath-options">styleSync(filepath [, options])</h3>
+<h3>styleSync(filepath [, options])</h3>
 <p>Ganam style a file synchronously:</p>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ganam = require(<span class="string">'ganam'</span>);
-<span class="keyword">var</span> styleguide = ganam.styleSync(<span class="string">'./bar.styl'</span>);
-</code></pre></div><h2 id="ganam-cli">Ganam CLI</h2>
+<pre><code class="lang-javascript">var ganam = require(&#39;ganam&#39;);
+var styleguide = ganam.styleSync(&#39;./bar.styl&#39;);</code></pre>
+<h2>Ganam CLI</h2>
 <p>Get the command line tools with:</p>
-<pre>$ npm install ganam-cli -g
-</pre>
+<pre><code>$ npm install ganam-cli -g</code></pre>
 <p>Watch it: <a href="https://github.com/lepture/ganam-cli">https://github.com/lepture/ganam-cli</a></p>
-</div>
-</div>
-</div>
-    <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.3.1</p>
+
+      </div>
+      <div class="footer">Powered by <a href="http://lab.lepture.com/ganam/">Ganam</a></div>
     </div>
-    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="./static/one.js"></script>
-    <div class="github"><a class="github-link" href="https://github.com/lepture/ganam">Fork me on GitHub</a></div>
   </body>
 </html>
