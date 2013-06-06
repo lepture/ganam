@@ -34,6 +34,13 @@ describe('styleFile', function() {
       done();
     });
   });
+
+  it('can parse header', function(done) {
+    style.styleFile(__dirname + '/cases/header-section.styl', function(data) {
+      console.log(data.header)
+      done();
+    });
+  });
 });
 
 
