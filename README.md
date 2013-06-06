@@ -65,8 +65,11 @@ Parse code and get the sections:
 
 ```javascript
 var ganam = require('ganam');
-var sections = ganam(code);
+var data = ganam(code);
+// {header: '...', sections: '...'}
 ```
+
+**Header** is the comments before any sections.
 
 **Sections** is a list of section, a section contains:
 
@@ -130,3 +133,27 @@ Get the command line tools with:
     $ npm install ganam-cli -g
 
 Watch it: https://github.com/lepture/ganam-cli
+
+
+## Changelog
+
+**Jun 6, 2013** `0.2.0`
+
+1. Parse header from comments. [#3](https://github.com/lepture/ganam/issues/3)
+
+**Jun 6, 2013** `0.1.3`
+
+1. export version on API
+
+**Apr 15, 2013** `0.1.2`
+
+1. Support parse example from a file
+2. Section name can be `x.y.z` format
+
+**Jan 10, 2013** `0.1.1`
+
+1. modifier support `.class:pseudo`
+
+**Jan 8, 2013** `0.1.0`
+
+First release.
