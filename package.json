@@ -30,5 +30,6 @@
   },
   "scripts": {
     "test": "make test"
-  }
+  },
+  "googleAnalytics": "UA-21475122-5"
 }
