@@ -37,7 +37,8 @@ describe('styleFile', function() {
 
   it('can parse header', function(done) {
     style.styleFile(__dirname + '/cases/header-section.styl', function(data) {
-      console.log(data.header)
+      var result = ['Header', '', 'Here is the header part'].join('\n');
+      expect(data.header).to.equal(result);
       done();
     });
   });
@@ -70,4 +71,11 @@ describe('styleFileSync', function() {
     var example = data.sections[0].examples[0].code;
     expect(example).to.contain('<h1>foo</h1>');
   });
+
+  it('can parse header', function() {
+    var data = style.styleFileSync(__dirname + '/cases/header-section.styl')
+    var result = ['Header', '', 'Here is the header part'].join('\n');
+    expect(data.header).to.equal(result);
+  });
+
 });

@@ -34,16 +34,18 @@ var blockComments = [
 
 
 describe('parse', function() {
-  it('can parse nothing', function() {
-    expect(parser('// foo')).to.have.length(0);
+  it('can no sections', function() {
+    var ret = parser('// foo');
+    expect(ret.header).to.equal('foo');
+    expect(ret.sections).to.have.length(0);
   });
 
   it('should have one section', function() {
-    expect(parser(blockComments)).to.have.length(1);
+    expect(parser(blockComments).sections).to.have.length(1);
   });
 
   it('should be a valid section', function() {
-    var section = parser(blockComments)[0];
+    var section = parser(blockComments).sections[0];
     expect(section.name).to.equal('1.1');
     expect(section.title).to.equal('Classy Buttons');
     expect(section.description).to.contain('widely');
@@ -53,7 +55,7 @@ describe('parse', function() {
 
   it('should be a valid section without `Examples:`', function() {
     var comments = blockComments.replace('Examples:\n', '');
-    var section = parser(comments)[0];
+    var section = parser(comments).sections[0];
     expect(section.name).to.equal('1.1');
     expect(section.title).to.equal('Classy Buttons');
     expect(section.description).to.contain('widely');
@@ -73,7 +75,7 @@ describe('parse', function() {
       '//   <a class="button-classy {{modifier}}">Button</a>'
     ].join('\n');
 
-    var section = parser(comments)[0];
+    var section = parser(comments).sections[0];
     expect(section.examples).to.not.be.ok();
     expect(section.exampleFile).to.equal('foo/bar.html');
   });
